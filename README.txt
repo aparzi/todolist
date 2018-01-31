@@ -1,27 +1,9 @@
-DOCUMENTO NON UFFICIALE SUL CORE APPLICATION PER APPLICAZIONI ANGULAR.JS
+# todolist
+Simple todolist application in Angularjs
 
-Backbone e application
-Partiamo con il dire che le due cartelle contengono la definizione di due moduli:
-- La cartella backbone contiene le informazioni di servizi e funzionalità di generico utilizzo, senza una specifica configurazione. Questo include i servizi per la gestione dei log, o il servizio per la gestione delle chiamate ai dei servizi rest.
-- La cartella application contiene tutte le informazioni strettamente collegate all'applicazioni, con alcune funzionalità implementata di esempio che, chiaramente, possono essere rimosse in funzione di altre strutture.
+<b>SETUP:</b>
+<li>Clone this repository: </li><code></code>
+<li>start application fron index.html</li>
 
-Il modulo application è configurabile, mentre il modulo backbone sarebbe consigliabile estenderlo con nuove funzionalità utili in tutti i progetti, senza renderlo direttamente collegato a funzionalità specifiche.
-
-Struttura del progetto
-La struttura del progetto è stata costruita sulla base dei componenti che angular definisce. Tale suddivisione è creata per permettere una maggiore leggibilità del codice e una maggiore modularità dei componenti definiti (così da poter essere implementati più velocemente anche in altri progetti). Le cartelle concettualmente rispecchiano questa logica:
-- configuration: i file contenuti in questa cartella conterranno informazioni di configurazione dell'app. Per esempio i file che definiscono costanti oppure i file che effettuano il lavoro di parametrizzazione dell'applicazione PRIMA che l'app sia effettivamente funzionante (gestione di file config e i file provider connessi, ma definiti nella cartella service).
-- directives: i file contenuti saranno le direttive definite per angular.js.
-- filters: i file contenuti saranno la definizione di filtri custom per il binding dei dati.
-- libraries: i file contenuti saranno tutti quelli inerenti a librerie che l'applicazione andrà a sfruttare. Di base avremo la libreria di angular, quella di bootstrap e quella per la gestione del routing applicativo.
-- services: questa cartella andrà a contenere i file per i provider o le factory. Tutti i file che vanno a definire una funzionalità non strettamente collegata ad una view (quindi tutte le logiche di gestione di un tipo di dato) verranno messi qui.
-- views: questa cartella conterrà tutte le view dell'applicazione. Ogni view sarà composta da una cartella con un nome che si riferisce al ruolo che andrà a svolgere nell'applicazione (la view di "home", la view di "login", etc..). A sua volta, questa cartella, conterrà 3 file: un file *.js, un file *.html e un file *.css. E' richiesta questo tipo di strutturazione per un semplice motivo funzionale e di standard, nessuno vieta di creare altri file all'interno di una cartella, ma questo modello esiste per dare la possibilità di avere un codice più ordinato e comprensibile anche a chi si approccia per la prima volta alla lettura di un'applicazione angular.js.
-
-Ci saranno poi 3 file all'interno della root application:
-- index.css: si può vedere questo file come una sorta di dichiarazione globale per gli stili dell'applicazione. In angular.js, la definizione di uno stile in un foglio, piuttosto che in un altro, non va ad incidere sulla funzionalità di quest'ultimo. Semplicemente è una "best practice" per rendere il codice più leggibile allo sviluppatore.
-- index.html: all'interno di questo file verranno dichiarate tutte le inclusioni dei componenti dell'applicazione (css o js che siano). Attenzione all'ordine! Se un file *.js viene dichiarato successivamente ad un altro, potrebbe creare problemi, per esempio nel caso in cui altri file necessitino di variabili, funzioni, etc.. definite in file, ma dichiarato successivamente. Questo va a creare una sorta di "mancanza di dipendenze" e può dare problemi. Di norma quindi vanno dichiarate prima i fogli di stile nel tag <HEAD>, successivamente è possibile definire le librerie di angular e tutte le altre librerie che sfrutta l'applicazione. Poi è necessario definire il modulo backbone, il modulo di run dell'applicazione (index.js) e a seguito i rimanenti componenti dell'applicazione. Infine, nel body dell'index sarà presente la dichiarazione che effettua il bootstrap dell'applicazione mediante la direttiva ng-app, e il modulo di gestione del routing per la single page: ui-view.
-- index.js: questo file è il "cuore" dell'applicazione. In questo file è definito il nome del modulo dell'applicazione, la dipendenza di tutti i moduli di cui necessita l'applicazione, il run dell'applicazione e un template che permette la gestione del "cambio di route". All'interno di questo file è possibile dichiarare tutto il codice di parametrizzazione dell'applicazione (per esempio, se l'applicazione necessiterà di un determinato tipo di header per tutte le chiamate REST, è possibile configurarlo all'interno di questo specifico file).
-
-Routing dell'applicazione
-Il routing dell'applicazione si basa sulla libreria iu-router. Questo modulo è un estensione è miglioramento del sistema di routing di default di angular.js. Ci sono due file che, nel template, sfruttano le funzioni fornite da questo modulo:
-- routeServiceProvider.js (all'interno della cartella configuration): all'interno di questo file sono definite tutte le route dell'applicazione. Esiste un codice di esempio con le funzionalità principali e il codice utilizzato per il routing di default dell'applicazione (ovvero: se l'applicazione tenta di accedere ad una view che non è stata censita, questa verrà reindirizzata alla view definita per il default). Esiste documentazione online per questa libreria. Nessuno vieta di rimuovere questa libreria in funzione di quella di angular (anche se non è consigliato farlo).
-- index.js (all'interno della root dell'applicazione): in questo file è già stato creato un template di gestione del route applicativo. In questo specifica configurazione (che può essere omessa se non necessaria) è stato scritto un codice che va ad intercettare gli eventi di cambio di route e di route caricata correttamente. Utilizzado questo codice è possibile effettuare un controllo dei dati. Un esempio pratico potrebbe essere quello di verificare che l'utente attualmente loggato abbia i permessi per accedere ad una determinata view. In base a dei criteri logici è possibili pilotare l'applicazione, permettendo la navigazione, oppure reindirizzarla a proprio piacere. 
+<b>ENJOY</b>
+<a target="_blank">https://aparzi.github.io/todolist/</a>
