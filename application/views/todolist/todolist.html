@@ -1,10 +1,14 @@
+<h1 class="">ToDo-List</h1>
+
+<br>
+
 <div style="text-align: center">
     <div>
         <form class="input-group" ng-submit="addTodo(newTodoName); newTodoName = null">
             <span class="input-group-addon">
                 <a ng-click="addTodo(newTodoName); newTodoName = null"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i></a>
             </span>
-            <input ng-model="newTodoName" type="text" class="form-control" placeholder="Type in your todo" aria-describedby="basic-addon1">
+            <input ng-model="newTodoName" type="text" class="form-control" placeholder="Add new todo" aria-describedby="basic-addon1">
         </form>
     </div>
 </div>
@@ -23,7 +27,7 @@
         <div class="col-md-6">
             <div class="input-group ">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" placeholder="Filter by name" ng-model="filter.name" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Search" ng-model="filter.name" aria-describedby="basic-addon1">
             </div>
         </div>
     </div>
