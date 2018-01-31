@@ -33,6 +33,13 @@ ul li {
     color: red;
     cursor: pointer;
 }
+li a {
+    opacity: 0;
+}
+
+li:hover > a {
+    opacity: 1;
+}
 
 .check {
     color: green;
@@ -45,3 +52,5 @@ ul li {
 .remove:hover {
     opacity: 0.5;
 }
+
+h1 { color: #ff4411; font-size: 48px; font-family: 'Signika', sans-serif; padding-bottom: 10px; }
