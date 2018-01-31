@@ -16,9 +16,15 @@
 
     <div class="row">
         <div class="col-md-6">
-            <a ng-click="filter = {}"><i class="glyphicon glyphicon-remove-sign glyphicon" style="font-size: 25px; padding-top:5px;" aria-hidden="true"></i></a>
-            <button class="btn btn-primary" ng-click="filterByDone()">Done</button>
-            <button class="btn btn-primary" ng-click="filterByNotDone()">In progress</button>
+            <!--<a ng-click="resetFilter()"><i title="reset filter" class="glyphicon glyphicon-remove-sign glyphicon" style="cursor: pointer; font-size: 25px; padding-top:5px;" aria-hidden="true"></i></a>-->
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-success" ng-class="btnDone ? 'active' : ''">
+                    <input type="radio" ng-click="filterByDone()" autocomplete="off"> Done
+                </label>
+                <label class="btn btn-warning" ng-class="btnInProgress ? 'active' : ''">
+                    <input type="radio" ng-click="filterByNotDone()" autocomplete="off"> In progress
+                </label>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="input-group ">
