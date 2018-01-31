@@ -1,0 +1,39 @@
+<div style="text-align: center">
+    <div>
+        <form class="input-group" ng-submit="addTodo(newTodoName); newTodoName = null">
+            <span class="input-group-addon">
+                <a ng-click="addTodo(newTodoName); newTodoName = null"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i></a>
+            </span>
+            <input ng-model="newTodoName" type="text" class="form-control" placeholder="Type in your todo" aria-describedby="basic-addon1">
+        </form>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="panel panel-primary" style="padding: 20px">
+
+    <div class="row">
+        <div class="col-md-6">
+            <a ng-click="filter = {}"><i class="glyphicon glyphicon-remove-sign glyphicon" style="font-size: 25px; padding-top:5px;" aria-hidden="true"></i></a>
+            <button class="btn btn-primary" ng-click="filterByDone()">Done</button>
+            <button class="btn btn-primary" ng-click="filterByNotDone()">In progress</button>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group ">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" placeholder="Filter by name" ng-model="filter.name" aria-describedby="basic-addon1">
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        <li ng-repeat="todo in todos | filter: filter">
+            <a ng-click="todo.checked = !todo.checked"><i class="glyphicon glyphicon-ok check" aria-hidden="true"></i></a>
+            <a ng-click="removeTodo(todo)"><i class="glyphicon glyphicon-remove remove" aria-hidden="true"></i></a>
+            <edit-in-place value="todo.name" ng-class="todo.checked ? 'checkedItem' : ''"></edit-in-place>
+        </li>
+    </ul>
+
+</div>

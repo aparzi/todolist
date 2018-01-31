@@ -1,0 +1,47 @@
+.checkedItem{
+    text-decoration: line-through;
+}
+
+.edit-in-place span {
+    cursor: pointer;
+}
+
+.edit-in-place input {
+    display: none;
+}
+
+.edit-in-place.active span {
+    display: none;
+}
+
+.edit-in-place.active input {
+    display: inline-block;
+}
+
+div.panel ul {
+    padding: 5px;
+    padding-top: 20px;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+
+ul li {
+    padding: 2px;
+}
+
+.remove {
+    color: red;
+    cursor: pointer;
+}
+
+.check {
+    color: green;
+    cursor: pointer;
+}
+.check:hover {
+    opacity: 0.5;
+}
+
+.remove:hover {
+    opacity: 0.5;
+}

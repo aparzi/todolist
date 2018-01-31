@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8" /> -->
+		<meta charset="UTF-8" />
+	    <title>XEOS APPLICATION</title>
+        <!-- <base href="/angular_core/"> -->
+        
+        <!--
+            IMPORTANTE:
+                - L'applicazione angular potrebbe avere la necessità di un cambio dei path che puntano ai file!
+        -->
+        
+        <!-- Classi di stile -->
+        <link rel="stylesheet" type="text/css" href="./libraries/Bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../xeos-backbone/xeos-backbone.css">
+        <link rel="stylesheet" type="text/css" href="./index.css">
+	    <link rel="stylesheet" type="text/css" href="./views/home/home.css">
+        <link rel="stylesheet" type="text/css" href="./views/todolist/todolist.css">
+
+
+        <!-- Librerie Angular -->
+	    <script type="text/javascript" src="./libraries/Angular/angular.min.js"></script>
+	    <script type="text/javascript" src="./libraries/Angular/angular-ui-router.min.js"></script>
+	    <script type="text/javascript" src="./libraries/Angular/angular-locale_it-it.js"></script>
+	    
+	    <!-- Libreria Angular Bootstrap -->
+	    <script type="text/javascript" src="./libraries/Bootstrap/AngularBootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	    
+        <!-- Libreria common xeos-backbone -->
+        <script type="text/javascript" src="../xeos-backbone/xeos-backbone.js"></script>
+        
+	    <!-- Componenti applicazione -->
+        <script type="text/javascript" src="./index.js"></script>
+        <!-- Caricamento configurazioni -->
+        <script type="text/javascript" src="./configuration/constConfig.js"></script>
+        <script type="text/javascript" src="./configuration/routeServiceProvider.js"></script>
+        <script type="text/javascript" src="../xeos-backbone/configuration/logServiceProvider.js"></script>
+        <script type="text/javascript" src="../xeos-backbone/configuration/RESTServiceProvider.js"></script>
+
+        <!-- Caricamento servizi -->
+        <script type="text/javascript" src="../xeos-backbone/services/logService.js"></script>
+        <script type="text/javascript" src="../xeos-backbone/services/RESTService.js"></script>
+        <script type="text/javascript" src="../xeos-backbone/services/utilitiesFactory.js"></script>
+        <!-- Caricamento controller -->
+        <script type="text/javascript" src="./views/home/home.js"></script>
+        <script type="text/javascript" src="./views/todolist/todolist.js"></script>
+
+        <!-- Direttive?? -->
+        <script type="text/javascript" src="./directives/editInPlace.js"></script>
+
+    </head>
+	
+    <!-- L'aggancio mediante ng app avviene nella definizione in index.js -->
+	<body ng-app="APP" class="container">
+
+        <div class="row">
+        <!-- Caricamento delle varie pagine dell'applicazione -->
+        <div ui-view class="col-md-offset-3 col-md-6"></div>
+
+        </div>
+	</body>
+</html>
